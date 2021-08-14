@@ -14,6 +14,11 @@ def swapList(newList):
 
 
 # Driver code
-newList = [12, 35, 9, 56, 24]
-
-print(swapList(newList))
+newList = []
+n=int(input("entert the size of the list : "))
+for x in range(n):
+    print('enter your element',x+1,':')
+    listElement=int(input())
+    newList.append(listElement)
+print("List before interchange first and last element = ",newList)
+print("List after interchange first and last element = ",swapList(newList))
