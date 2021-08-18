@@ -17,5 +17,5 @@ print("List before swapping = ",newList)
 pos1=int(input('enter element 1 position: '))
 pos2=int(input('enter element 2 position: '))
 
-print(swapPositions(newList, pos1-1, pos2-1))
+print('List after swapping: ',swapPositions(newList, pos1-1, pos2-1))
 
