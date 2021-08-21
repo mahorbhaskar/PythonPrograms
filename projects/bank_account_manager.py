@@ -31,3 +31,14 @@ class Account:
             self.balance -= wd_amt
         else:
             return 'Funds Unavailable'
+
+#Step 2: Establish a Checking Account class that inherits from Account, and adds Checking-specific traits.
+
+class Checking(Account):
+    def __init__(self,acct_nbr,opening_deposit):
+        # Run the base class __init__
+        super().__init__(acct_nbr,opening_deposit)
+
+    # Define a __str__ method that returns a string specific to Checking accounts
+    def __str__(self):
+        return f'Checking Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
