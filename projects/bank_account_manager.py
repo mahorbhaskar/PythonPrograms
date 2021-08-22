@@ -42,3 +42,31 @@ class Checking(Account):
     # Define a __str__ method that returns a string specific to Checking accounts
     def __str__(self):
         return f'Checking Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
+
+#Step 3: TEST setting up a Checking Account object
+x = Checking(54321,654.33)
+print(x)
+x.withdraw(1000)
+x.withdraw(30)
+x.balance
+
+#step 4 : setup similar savings and business account classes
+
+class Savings(Account):
+    def __init__(self,acct_nbr,opening_deposit):
+        # Run the base class __init__
+        super().__init__(acct_nbr,opening_deposit)
+
+    # Define a __str__ method that returns a string specific to Savings accounts
+    def __str__(self):
+        return f'Savings Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
+
+
+class Business(Account):
+    def __init__(self,acct_nbr,opening_deposit):
+        # Run the base class __init__
+        super().__init__(acct_nbr,opening_deposit)
+
+    # Define a __str__ method that returns a string specific to Business accounts
+    def __str__(self):
+        return f'Business Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
