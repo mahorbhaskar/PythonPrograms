@@ -109,3 +109,13 @@ class Customer:
             print(acct)
             total += acct.balance
         print(f'Combined Deposits: ${total}')
+
+#Step 6: TEST setting up a Customer, adding accounts, and checking balances
+
+bob = Customer('Bob',1)
+bob.open_checking(321,555.55)
+bob.get_total_deposits()
+bob.open_savings(564,444.66)
+nancy = Customer('Nancy',2)
+nancy.open_business(2018,8900)
+nancy.get_total_deposits()
