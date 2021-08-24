@@ -119,3 +119,51 @@ bob.open_savings(564,444.66)
 nancy = Customer('Nancy',2)
 nancy.open_business(2018,8900)
 nancy.get_total_deposits()
+'''
+Wait! Why don't Nancy's combined deposits show a decimal?
+This is easily fixed in the class definition (mostly copied from above, with a change made to 
+the last line of code):
+'''
+
+
+class Customer:
+    def __init__(self, name, PIN):
+        self.name = name
+        self.PIN = PIN
+        self.accts = {'C': [], 'S': [], 'B': []}
+
+    def __str__(self):
+        return self.name
+
+    def open_checking(self, acct_nbr, opening_deposit):
+        self.accts['C'].append(Checking(acct_nbr, opening_deposit))
+
+    def open_savings(self, acct_nbr, opening_deposit):
+        self.accts['S'].append(Savings(acct_nbr, opening_deposit))
+
+    def open_business(self, acct_nbr, opening_deposit):
+        self.accts['B'].append(Business(acct_nbr, opening_deposit))
+
+    def get_total_deposits(self):
+        total = 0
+        for acct in self.accts['C']:
+            print(acct)
+            total += acct.balance
+        for acct in self.accts['S']:
+            print(acct)
+            total += acct.balance
+        for acct in self.accts['B']:
+            print(acct)
+            total += acct.balance
+        print(f'Combined Deposits: ${total:.2f}')  # added precision formatting here
+
+#So it's fixed, right?
+nancy.get_total_deposits()
+
+'''
+Nope! Changes made to the class definition do not affect objects created under different sets of instructions.
+To fix Nancy's account, we have to build her record from scratch.
+'''
+nancy = Customer('Nancy',2)
+nancy.open_business(2018,8900)
+nancy.get_total_deposits()
