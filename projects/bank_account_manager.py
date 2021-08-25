@@ -186,3 +186,45 @@ def make_dep(cust,acct_type,acct_num,dep_amt):
 
 make_dep(nancy,'B',2018,67.45)
 nancy.get_total_deposits()
+
+
+class Account:
+    def __init__(self, acct_nbr, opening_deposit):
+        self.acct_nbr = acct_nbr
+        self.balance = opening_deposit
+
+    def __str__(self):
+        return f'${self.balance:.2f}'
+
+    def deposit(self, dep_amt):
+        self.balance += dep_amt
+
+    def withdraw(self, wd_amt):
+        if self.balance >= wd_amt:
+            self.balance -= wd_amt
+        else:
+            print('Funds Unavailable')  # changed "return" to "print"
+
+
+class Checking(Account):
+    def __init__(self, acct_nbr, opening_deposit):
+        super().__init__(acct_nbr, opening_deposit)
+
+    def __str__(self):
+        return f'Checking Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
+
+
+class Savings(Account):
+    def __init__(self, acct_nbr, opening_deposit):
+        super().__init__(acct_nbr, opening_deposit)
+
+    def __str__(self):
+        return f'Savings Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
+
+
+class Business(Account):
+    def __init__(self, acct_nbr, opening_deposit):
+        super().__init__(acct_nbr, opening_deposit)
+
+    def __str__(self):
+        return f'Business Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
