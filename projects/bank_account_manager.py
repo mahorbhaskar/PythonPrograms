@@ -167,3 +167,22 @@ To fix Nancy's account, we have to build her record from scratch.
 nancy = Customer('Nancy',2)
 nancy.open_business(2018,8900)
 nancy.get_total_deposits()
+
+'''
+Step 7: Let's write some functions for making deposits and withdrawals.
+Be sure to include a docstring that explains what's expected by the function!
+'''
+def make_dep(cust,acct_type,acct_num,dep_amt):
+    """
+    make_dep(cust, acct_type, acct_num, dep_amt)
+    cust      = variable name (Customer record/ID)
+    acct_type = string 'C' 'S' or 'B'
+    acct_num  = integer
+    dep_amt   = integer
+    """
+    for acct in cust.accts[acct_type]:
+        if acct.acct_nbr == acct_num:
+            acct.deposit(dep_amt)
+
+make_dep(nancy,'B',2018,67.45)
+nancy.get_total_deposits()
