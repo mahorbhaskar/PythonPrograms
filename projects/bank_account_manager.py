@@ -228,3 +228,7 @@ class Business(Account):
 
     def __str__(self):
         return f'Business Account #{self.acct_nbr}\n  Balance: {Account.__str__(self)}'
+
+nancy = Customer('Nancy',2)
+nancy.open_business(2018,8900)
+nancy.get_total_deposits()
