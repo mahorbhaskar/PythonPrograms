@@ -232,3 +232,7 @@ class Business(Account):
 nancy = Customer('Nancy',2)
 nancy.open_business(2018,8900)
 nancy.get_total_deposits()
+
+make_wd(nancy,'B',2018,1000000)
+
+nancy.get_total_deposits()
