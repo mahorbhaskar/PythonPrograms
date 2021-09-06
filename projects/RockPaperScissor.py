@@ -9,6 +9,8 @@ Rock vs scissor-> Rock wins
 paper vs scissor-> scissor wins.
 '''
 import random
+name=input("your name: ")
+print("good luck",name)
 
 print("Winning Rules of the Rock paper scissor game as follows: \n"
                                 +"Rock vs paper->paper wins \n"
@@ -73,7 +75,7 @@ while True:
 
     # Printing either user or computer wins
     if result == choice_name:
-        print("<== User wins ==>")
+        print("<== ",name," wins ==>")
     else:
         print("<== Computer wins ==>")
 
