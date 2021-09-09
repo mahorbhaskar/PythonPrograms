@@ -11,7 +11,7 @@ def hlper_fnc(test_str):
 	return [val for val, chr in cntr.items() if chr % 2 != 0]
 
 # initializing string
-test_str = 'geekforgeeks is best for geeks'
+test_str = 'Welcome to my world Its amazing'
 
 # printing original string
 print("The original string is : " + str(test_str))
