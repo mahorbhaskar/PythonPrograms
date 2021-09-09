@@ -3,7 +3,7 @@
 # naive method
 
 # initializing string
-test_str = "GeeksforGeeks"
+test_str = "HeyThereEveryoneThisIsShivam"
 
 # printing original string
 print ("The original string is : " + test_str)
