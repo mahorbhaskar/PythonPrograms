@@ -1,27 +1,28 @@
-# divide function
-def partition(arr,low,high):
-   i = ( low-1 )
-   pivot = arr[high] # pivot element
-   for j in range(low , high):
-      # If current element is smaller
-      if arr[j] <= pivot:
-         # increment
-         i = i+1
-         arr[i],arr[j] = arr[j],arr[i]
-   arr[i+1],arr[high] = arr[high],arr[i+1]
-   return ( i+1 )
-# sort
-def quickSort(arr,low,high):
-   if low < high:
-      # index
-      pi = partition(arr,low,high)
-      # sort the partitions
-      quickSort(arr, low, pi-1)
-      quickSort(arr, pi+1, high)
-# main
-arr = [2,5,3,8,6,5,4,7]
-n = len(arr)
-quickSort(arr,0,n-1)
-print ("Sorted array is:")
-for i in range(n):
-   print (arr[i],end=" ")
+# WAP to sort a list using Quick Sort Algorithm
+
+def pivot_place(list1,first,last):
+   pivot = list1[first]
+   left=first+1
+   right=last
+   while True:
+      while left<=right and list1[left]<=pivot:
+         left = left+1
+      while left<=right and list1[right]>=pivot:
+         right = right-1
+      if right < left:
+         break
+      else:
+         list1[left], list1[right] = list1[right], list1[left]
+   list1[first], list1[right] = list1[right], list1[first]
+   return right
+
+def quick_sort(list1,first,last):
+   if first < last:
+      p = pivot_place(list1,first,last)
+      quick_sort(list1,first,p-1)
+      quick_sort(list1,p+1,last)
+
+list1=[17,11,23,93,20,30,72,50]
+n=len(list1)
+quick_sort(list1,0,n-1)
+print(list1)
