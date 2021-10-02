@@ -1,4 +1,4 @@
-# WAP to sort a list using Quick Sort Algorithm
+# Quick Sort 
 
 def pivot_place(list1,first,last):
    pivot = list1[first]
